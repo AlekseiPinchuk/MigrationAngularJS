@@ -1,0 +1,23 @@
+<tr>
+    <td>
+        <span ng-bind="item.id">{{ item.id }}</span>
+    </td>
+    <td>
+        <span ng-bind="item.firstName" ng-if="!item.show">{{ item.firstName }}</span>
+        <input type="text" name="name" ng-model="item.firstName" ng-if="item.show">
+    </td>
+    <td>
+        <span ng-bind="item.lastName" ng-if="!item.show">{{ item.lastName }}</span>
+        <input type="text" name="name" ng-model="item.lastName" ng-if="item.show">
+    </td>
+    <td>
+        <span ng-bind="item.isActive" ng-if="!item.show">{{ item.isActive }}</span>
+        <input type="checkbox" name="location" ng-model="item.isActive" ng-if="item.show">
+    </td>
+    <td>
+        <button ng-click="onEditClick(index)" ng-if="!item.show">Edit</button>
+        <button ng-click="onEditClick(index)" ng-if="item.show">Save</button>
+        <button ng-click="onDeleteClick(item.id)">Delete</button>
+    </td>
+</tr>
+
