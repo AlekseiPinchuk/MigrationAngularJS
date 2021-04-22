@@ -45,4 +45,31 @@ export class TableComponent implements OnInit {
       this.LocalStorageService.setItem('items', this.users);
     }
   }
+
+  public addRow(): void {
+    const itemsIds = this.users.map(item => {
+      return item.id;
+    });
+
+    this.users.push({
+      id: Math.max.apply(null, itemsIds) + 1,
+      firstName: '',
+      lastName: '',
+      isActive: false,
+      show: true,
+    });
+    this.LocalStorageService.setItem('items', this.users);
+  }
+
+  public delete(id: number): void {
+    this.users.splice(this.users.findIndex(el => +el.id === +id), 1);
+    this.LocalStorageService.setItem('items', this.users);
+  }
+
+  public change(id: number): void {
+    const index = this.users.findIndex(el => +el.id === +id);
+
+    this.users[+index].show = !(this.users[+index].show);
+    this.LocalStorageService.setItem('items', this.users);
+  }
 }

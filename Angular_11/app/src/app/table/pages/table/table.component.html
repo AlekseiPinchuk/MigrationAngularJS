@@ -1,5 +1,5 @@
 <ng-container>
-  <button>Add</button>
+  <button (click)="addRow()">Add</button>
   <hr>
   <table border="5" cellpadding="10" cellspacing="2">
     <thead>
@@ -12,9 +12,12 @@
     </tr>
     </thead>
     <tbody>
-      <ng-container *ngFor="let user of users">
-
-      </ng-container>
+      <tr *ngFor="let user of users"
+          table-row
+          [user]="user"
+          (onChange)="change($event)"
+          (onDelete)="delete($event)"
+      ></tr>
     </tbody>
   </table>
 </ng-container>

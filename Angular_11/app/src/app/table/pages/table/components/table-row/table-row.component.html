@@ -1,0 +1,22 @@
+<ng-container>
+  <td>
+    <span>{{ user.id }}</span>
+  </td>
+  <td>
+    <span *ngIf="!user.show">{{ user.firstName }}</span>
+    <input type="text" name="name" [(ngModel)]="user.firstName" *ngIf="user.show">
+  </td>
+  <td>
+    <span *ngIf="!user.show">{{ user.lastName }}</span>
+    <input type="text" name="name" [(ngModel)]="user.lastName" *ngIf="user.show">
+  </td>
+  <td>
+    <span *ngIf="!user.show">{{ user.isActive }}</span>
+    <input type="checkbox" name="is-active" [(ngModel)]="user.isActive" *ngIf="user.show">
+  </td>
+  <td>
+    <button (click)="onEditClick(user.id)" *ngIf="!user.show">Edit</button>
+    <button (click)="onEditClick(user.id)" *ngIf="user.show">Save</button>
+    <button (click)="onDeleteClick(user.id)">Delete</button>
+  </td>
+</ng-container>

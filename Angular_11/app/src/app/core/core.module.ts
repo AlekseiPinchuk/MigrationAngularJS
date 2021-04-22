@@ -20,6 +20,7 @@ import { LocalStorageService } from './services/local-storage.service';
   exports: [
     HttpClientModule,
     ReactiveFormsModule,
+    FormsModule,
     CommonModule,
     PipesModule,
   ],
