@@ -4,6 +4,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { PipesModule } from './pipes.module';
+import { LocalStorageService } from './services/local-storage.service';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { PipesModule } from './pipes.module';
   ],
   providers: [
     //declare services & interceptors there
+    LocalStorageService,
   ]
 })
 export class CoreModule {}
